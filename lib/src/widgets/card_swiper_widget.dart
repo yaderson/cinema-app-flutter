@@ -11,7 +11,7 @@ class CardSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     final _screenSize = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 15),
       child: Swiper(
           itemBuilder: (BuildContext context, int index) {
             movies[index].uniqueId = '${movies[index].id}-cards';
@@ -28,7 +28,7 @@ class CardSwiper extends StatelessWidget {
               ),
             );
           },
-          itemHeight: _screenSize.height * 0.55,
+          itemHeight: _screenSize.height * 0.54,
           itemWidth: _screenSize.width * 0.5,
           itemCount: movies.length,
           layout: SwiperLayout.STACK
@@ -39,28 +39,21 @@ class CardSwiper extends StatelessWidget {
   }
 
   Widget _cardBody(BuildContext context,Movie movie) {
-    return Stack(
-      children: <Widget>[
-        GestureDetector(
-          onTap: () => Navigator.pushNamed(context,'details', arguments: movie),
-          child: ClipRRect(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10)),
-            child: FadeInImage(
-              placeholder: AssetImage('assets/loading.gif'),
-              image: NetworkImage(movie.getPosterImg()),
-              fit: BoxFit.cover,
-            ),
+    final _screenSize = MediaQuery.of(context).size;
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context,'details', arguments: movie),
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10)),
+        child: Container(
+          height: _screenSize.height * 0.54 - 50,
+          width: _screenSize.width * 0.5,
+          child: FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
+            image: NetworkImage(movie.getPosterImg()),
+            fit: BoxFit.cover,
           ),
         ),
-        Tooltip(
-          
-          message: movie.releaseDate,
-          child: Container(
-            padding: EdgeInsets.all(10.0),
-            child: Icon(Icons.info, color: Colors.white)
-          ),
-        ),
-      ],
+      ),
     );
   }
 

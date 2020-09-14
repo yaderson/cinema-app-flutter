@@ -23,7 +23,8 @@ class MoviesHorizontal extends StatelessWidget {
     });
     final _screenSize = MediaQuery.of(context).size;
     return Container( 
-      height: _screenSize.height * 0.25,
+      
+      height: 172,
       child: PageView.builder(
         pageSnapping: false,
         controller: _pageController,

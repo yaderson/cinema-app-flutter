@@ -83,10 +83,16 @@ class DataSearch extends SearchDelegate {
         ListTile(
           leading: Hero(
             tag: movie.uniqueId,
-            child: Image(
-              image: NetworkImage(movie.getPosterImg()),
-              height: 100.0,
-              width: 100.0,
+            child: Container(
+              color: Colors.red,
+              width: 40,
+              
+              child: Image(
+                fit: BoxFit.cover,
+                image: NetworkImage(movie.getPosterImg()),
+                //height: 100.0,
+                //width: 50.0,
+              ),
             ),
           ),
           title: Text(movie.title),

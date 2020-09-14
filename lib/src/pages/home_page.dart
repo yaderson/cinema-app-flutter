@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
         child: Column(
             children: <Widget>[
               _swiperCards(),
+              Expanded(child: Container()),
               _footer(context)
             ],
           ),
@@ -35,13 +36,16 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _footer (BuildContext context) {
+    final _screenSize = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
+      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          
           Container(
-            padding: EdgeInsets.only(left: 20, bottom: 15),
+            padding: EdgeInsets.only(left: 20, bottom: 10),
             child: Text('Populars', style: TextStyle(fontWeight: FontWeight.bold)),
           ),
           StreamBuilder(
