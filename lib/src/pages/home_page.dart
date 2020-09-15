@@ -36,7 +36,6 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _footer (BuildContext context) {
-    final _screenSize = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
       
@@ -46,7 +45,7 @@ class HomePage extends StatelessWidget {
           
           Container(
             padding: EdgeInsets.only(left: 20, bottom: 10),
-            child: Text('Populars', style: TextStyle(fontWeight: FontWeight.bold)),
+            child: Text('Populares', style: TextStyle(fontWeight: FontWeight.bold)),
           ),
           StreamBuilder(
             stream: _movieProvider.popularsStream,

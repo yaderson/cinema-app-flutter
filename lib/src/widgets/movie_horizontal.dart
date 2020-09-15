@@ -21,14 +21,12 @@ class MoviesHorizontal extends StatelessWidget {
         nextPage();
       }
     });
-    final _screenSize = MediaQuery.of(context).size;
     return Container( 
       
       height: 172,
       child: PageView.builder(
         pageSnapping: false,
         controller: _pageController,
-        //children: _cards(),
         itemCount: movies.length,
         itemBuilder: (context, index) {
           return _card(context, movies[index]);
