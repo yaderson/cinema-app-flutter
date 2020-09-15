@@ -2,6 +2,11 @@
 
 A new Flutter project.
 
+##Preview
+
+<img src="https://raw.githubusercontent.com/yaderson/cinema-app-flutter/master/assets/preview/home_page.png" width="200" align=center /> <img src="https://github.com/yaderson/cinema-app-flutter/blob/master/assets/preview/movie_details_page.png?raw=true" width="200" align=center /> <img src="https://github.com/yaderson/cinema-app-flutter/blob/master/assets/preview/search_page.png?raw=true"  width="200" align=center />
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
